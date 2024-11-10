@@ -1,5 +1,5 @@
 # RoboOpVisualizer
-![Screenshot 2024-10-19 231540](https://github.com/user-attachments/assets/e0a10bbb-9b70-4643-b392-a1ba2d979aef)
+![Screenshot 2024-11-09 220055](https://github.com/user-attachments/assets/e5c4d16a-bb36-434a-b091-8e954a3506d1)
 ## Install Instructions
 ### CMake
 Builds the project.
@@ -10,11 +10,5 @@ cmake --build build
 ## Features
 ### Edit and View Paths
 Simply use the GUI to create and edit paths. They will be displayed on the screen.
-### Panning
-Use the arrow keys to move around.
-## Planned Features
-- Background overlay
-- Code generation
-- Code view window
-- Performance optimization
-- Robot path following visualization
+## Usage
+Select the `Tools` on the top menu bar. This will bring down a dropdown of all the tool menus. Select the menus you want. You can dock and resize these as you wish.

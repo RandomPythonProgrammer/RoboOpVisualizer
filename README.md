@@ -1,5 +1,5 @@
 # RoboOpVisualizer
-![Screenshot 2024-11-09 220055](https://github.com/user-attachments/assets/e5c4d16a-bb36-434a-b091-8e954a3506d1)
+![Screenshot 2024-11-09 223059](https://github.com/user-attachments/assets/18f42b1c-533c-40f0-81c1-80d491f5db60)
 ## Install Instructions
 ### CMake
 Builds the shared library and the test binary.
@@ -11,4 +11,7 @@ cmake --build build
 ### Edit and View Paths
 Simply use the GUI to create and edit paths. They will be displayed on the screen.
 ## Usage
-Select the `Tools` on the top menu bar. This will bring down a dropdown of all the tool menus. Select the menus you want. You can dock and resize these as you wish.
+### Menus
+Select the `Tools` on the top menu bar. This will bring down a dropdown of all the tool menus. Select the menus you want. You can dock and resize these as you wish. The window can also be reiszed.
+### Graph
+Scroll inside of the graph to zoom in and out, click and drag to pan.

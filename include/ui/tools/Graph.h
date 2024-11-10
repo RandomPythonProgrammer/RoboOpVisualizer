@@ -5,6 +5,7 @@
 
 struct Graph: public ITool {
     std::shared_ptr<TrajectoryManager> manager;
-    Graph(const std::shared_ptr<TrajectoryManager>& manager): manager{manager} {}
+    float currentLength;
+    Graph(const std::shared_ptr<TrajectoryManager>& manager): manager{manager}, currentLength{0} {}
     void render() override;
 };

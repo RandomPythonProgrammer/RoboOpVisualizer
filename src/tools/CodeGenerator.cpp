@@ -3,7 +3,7 @@
 #include <format>
 
 std::string formatPose(const Pose2d& pose) {
-return std::format("{{{}, {}, {}}}", pose.position.x(), pose.position.y(), pose.rotation);
+return std::format("{{{{{}, {}}}, {}}}", pose.position.x(), pose.position.y(), pose.rotation);
 }
 
 std::string CodeGenerator::generateCode(const std::vector<Pose2d>& poses) {

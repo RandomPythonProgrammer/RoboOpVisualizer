@@ -1,5 +1,5 @@
 # RoboOpVisualizer
-![Screenshot 2024-11-09 223059](https://github.com/user-attachments/assets/18f42b1c-533c-40f0-81c1-80d491f5db60)
+![image](https://github.com/user-attachments/assets/05924ffa-f4d6-416a-916b-234c3aeed642)
 ## Install Instructions
 ### CMake
 Builds the shared library and the test binary.

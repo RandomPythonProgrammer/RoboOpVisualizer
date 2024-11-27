@@ -1,10 +1,10 @@
-cmake_minimum_required(VERSION 3.28)
+cmake_minimum_required(VERSION 3.25)
 project(RoboOpVisualizer LANGUAGES CXX)
 
 include(FetchContent)
 
 FetchContent_Declare(RoboOp
-    GIT_REPOSITORY https://github.com/RandomPythonProgrammer/Library.git
+    GIT_REPOSITORY https://github.com/RandomPythonProgrammer/RoboOp.git
     GIT_TAG origin/main
 )
 FetchContent_MakeAvailable(RoboOp)
@@ -36,4 +36,4 @@ target_link_libraries(main PRIVATE ${OPENGL_LIBRARIES})
 target_link_libraries(main PRIVATE RoboOp)
 target_compile_features(main PRIVATE cxx_std_20)
 
-file(COPY font/fa-solid-900.ttf DESTINATION ${CMAKE_BINARY_DIR}/bin)
+file(COPY font/fa-solid-900.ttf DESTINATION ${CMAKE_BINARY_DIR})

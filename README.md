@@ -2,7 +2,7 @@
 ![image](https://github.com/user-attachments/assets/05924ffa-f4d6-416a-916b-234c3aeed642)
 ## Install Instructions
 ### CMake
-Builds the shared library and the test binary.
+Builds the project.
 ```
 cmake -B build
 cmake --build build

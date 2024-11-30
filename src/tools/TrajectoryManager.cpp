@@ -28,7 +28,7 @@ void TrajectoryManager::swap(int a, int b) {
 void TrajectoryManager::add(int index) {
     ControlPoint point;
     if (index > 0)
-        point = controlPoints[index];
+        point = controlPoints[index-1];
     controlPoints.insert(controlPoints.begin() + index, point);
     regenerate();
 }

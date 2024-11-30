@@ -30,7 +30,9 @@ void Graph::render() {
     ImGui::SameLine();
     ImGui::SetNextItemWidth(80);
     ImGui::InputDouble("MaxY", &overlay.maxY, 0, 0, "%g");
-
+    ImGui::SameLine();
+    ImGui::SetNextItemWidth(80);
+    ImGui::InputDouble("HSTEP", &_H_STEP, 0, 0, "%g");
 
     if (ImPlot::BeginPlot("Splines", ImGui::GetContentRegionAvail())) {
         if (overlay.filename[0]!='\0') {
@@ -39,20 +41,22 @@ void Graph::render() {
             }
         }
         
-        if (trajectory) {
+        if (trajectory and _H_STEP > 0) {
             for (int i = 0; i < trajectory->splines.size(); i++) {
                 const auto& spline = trajectory->splines[i];
                 double start = 0;
-                int count = 1/H_STEP;
+                int count = ceil(1/_H_STEP) + 1;
                 double x_values[count];
                 double y_values[count];
         
                 for (int ii = 0; ii < count; ii++) {
-                    Eigen::Vector2d position = spline.get(ii * H_STEP);
+                    Eigen::Vector2d position = spline.get(ii * _H_STEP);
                     x_values[ii] = position.x();
                     y_values[ii] = position.y();
                 }
 
+                x_values[count-1] = spline.end.position.x();
+                y_values[count-1] = spline.end.position.y();
                 ImPlot::PlotLine(std::format("Spline {}", i).c_str(), x_values, y_values, count);
             }
 

@@ -4,7 +4,7 @@
 #include "IconsFontAwesome6.h"
 
 void Code::render() {
-    std::string code = generator->generateCode(manager->poses);
+    std::string code = generator->generateCode(manager->getPoints());
     ImGui::Begin("Code");
     ImGui::BeginChild("Output");
     ImGui::Text("Generated Code");

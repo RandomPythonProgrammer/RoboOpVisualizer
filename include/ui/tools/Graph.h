@@ -2,6 +2,7 @@
 #include "tools/TrajectoryManager.h"
 #include "ui/ITool.h"
 #include <GL/gl.h>
+#include <common/calc.h>
 #include <memory>
 
 struct Overlay {
@@ -16,7 +17,8 @@ struct Overlay {
 struct Graph: public ITool {
     std::shared_ptr<TrajectoryManager> manager;
     float currentLength;
+    double _H_STEP;
     Overlay overlay;
-    Graph(const std::shared_ptr<TrajectoryManager>& manager): manager{manager}, currentLength{0} {}
+    Graph(const std::shared_ptr<TrajectoryManager>& manager): manager{manager}, currentLength{0}, _H_STEP(H_STEP * 10) {}
     void render() override;
 };

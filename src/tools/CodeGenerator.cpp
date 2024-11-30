@@ -6,12 +6,17 @@ std::string formatPose(const Pose2d& pose) {
 return std::format("{{{{{}, {}}}, {}}}", pose.position.x(), pose.position.y(), pose.rotation);
 }
 
-std::string CodeGenerator::generateCode(const std::vector<Pose2d>& poses) {
+std::string CodeGenerator::generateCode(const std::vector<ControlPoint>& points) {
     std::string output;
-    if (not poses.empty()) {
-        output += std::format("std::shared_ptr<Trajectory> trajectory = TrajectoryBuilderFactory::create({})\n", formatPose(poses[0]));
-        for (int i = 1; i < poses.size(); i++) {
-            output+=std::format("\t.to({})\n", formatPose(poses[i]));
+    if (not points.empty()) {
+        output += std::format("std::shared_ptr<Trajectory> trajectory = TrajectoryBuilderFactory::create({})\n", formatPose(points[0].pose));
+        bool reversed = false;
+        for (int i = 1; i < points.size(); i++) {
+            if (points[i].reversed != reversed) {
+                reversed = not reversed;
+                output += std::format("\t.setReversed({})\n", reversed);
+            }
+            output+=std::format("\t.to({})\n", formatPose(points[i].pose));
         }
         output+="\t.build();\n";
     }

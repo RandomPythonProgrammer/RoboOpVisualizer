@@ -22,7 +22,7 @@ FetchContent_MakeAvailable(glfw)
 find_package(OpenGL REQUIRED)
 
 FetchContent_Declare(soil2
-    GIT_REPOSITORY https://github.com/Jacob-Tate/soil2-cmake.git
+    GIT_REPOSITORY https://github.com/SpartanJ/SOIL2
 )
 FetchContent_MakeAvailable(soil2)
 
